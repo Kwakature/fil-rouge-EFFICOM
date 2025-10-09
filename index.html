@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Jardins de Marie - Maraîcher Bio | Le Panier Lillois</title>
+    <link rel="stylesheet" href="/asset/css/styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="logo">
+            <h2>Les Jardins de Marie</h2>
+            <p class="tagline">Maraîcher Bio</p>
+        </div>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="/html/produits.html">Nos Produits</a></li>
+                <li><a href="/html/savoir-faire.html">Notre Savoir-Faire</a></li>
+                <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Bouton burger -->
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Des légumes cultivés avec passion dans les Hauts-de-France</h1>
+                <p>Découvrez nos produits bio, récoltés à la main et cultivés en circuit court</p>
+            </div>
+        </section>
+
+        <section class="notre-histoire">
+            <div class="container">
+                <h2>Notre Histoire</h2>
+                <p>Depuis 15 ans, Marie cultive avec passion des légumes biologiques dans sa ferme familiale près de Lille. Son engagement : proposer des produits sains, cultivés dans le respect de la terre et des saisons, directement aux habitants de la métropole lilloise.</p>
+            </div>
+        </section>
+
+        <section class="produits-vedettes">
+            <div class="container">
+                <h2>Nos Produits Vedettes</h2>
+                <div class="product-grid">
+                    <a href="/html/produit-tomates-anciennes.html" class="product-card">
+                        <div class="product-image">
+                            <img src="/asset/img/tomate-ancienne.webp" alt="Tomates anciennes">
+                        </div>
+                        <h3>Tomates Anciennes</h3>
+                        <p class="price">4,50€ / kg</p>
+                    </a>
+                    <a href="/html/produit-carottes-bio.html" class="product-card">
+                        <div class="product-image">
+                            <img src="/asset/img/carottes-multicolores.webp" alt="Carottes bio">
+                        </div>
+                        <h3>Carottes Multicolores</h3>
+                        <p class="price">3,20€ / kg</p>
+                    </a>
+                    <a href="/html/produit-courges.html" class="product-card">
+                        <div class="product-image">
+                            <img src="/asset/img/courges-du-jardin.webp" alt="Courges">
+                        </div>
+                        <h3>Courges du Jardin</h3>
+                        <p class="price">2,80€ / kg</p>
+                    </a>
+                    <a href="/html/produit-salades.html" class="product-card">
+                        <div class="product-image">
+                            <img src="/asset/img/salades-de-saison.webp" alt="Salades">
+                        </div>
+                        <h3>Salades de Saison</h3>
+                        <p class="price">2,00€ / pièce</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="rencontrez-producteur">
+            <div class="container">
+                <div class="producer-intro">
+                    <div class="producer-image">
+                        <img src="/asset/img/tracteur.webp" alt="Marie dans ses champs">
+                    </div>
+                    <div class="producer-text">
+                        <h2>Rencontrez Marie</h2>
+                        <p>Passionnée par l'agriculture biologique, Marie vous ouvre les portes de sa ferme et vous partage son savoir-faire ancestral transmis de génération en génération.</p>
+                        <p>Découvrez son histoire, ses méthodes de culture respectueuses de l'environnement et son engagement pour une alimentation saine et locale.</p>
+                        <a href="/html/savoir-faire.html" class="btn">Découvrir son histoire</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+ 
+    <div id="footer"></div>
+
+    <script>
+
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+
+        burger.addEventListener('click', () => {
+            const expanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        nav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                burger.setAttribute('aria-expanded','false');
+                nav.classList.remove('open');
+            });
+        });
+
+        fetch("/html/footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+</body>
+</html>

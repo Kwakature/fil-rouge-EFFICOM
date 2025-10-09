@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courges du Jardin - Les Jardins de Marie</title>
+    <link rel="stylesheet" href="/asset/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2>Les Jardins de Marie</h2>
+                <p class="tagline">Maraîcher Bio</p>
+            </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li><a href="/html/produits.html" class="active" >Nos Produits</a></li>
+                    <li><a href="/html/savoir-faire.html">Notre Savoir-Faire</a></li>
+                    <li><a href="/html/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Bouton burger -->
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-layout">
+                    <div class="product-gallery">
+                        <img src="/asset/img/courges-du-jardin.webp" alt="Assortiment de courges">
+                    </div>
+                    <div class="product-info">
+                        <h1>Courges du Jardin</h1>
+                        <p class="product-description">
+                            L'automne arrive avec son cortège de courges savoureuses. Butternut, potimarron, courge musquée ou spaghetti, nous cultivons une large gamme de cucurbitacées aux formes et saveurs variées. Ces légumes généreux, gorgés de soleil, se conservent plusieurs mois et constituent la base idéale de nombreuses recettes réconfortantes.
+                        </p>
+                        <p class="product-description">
+                            Cultivées en plein champ selon les méthodes de l'agriculture biologique, nos courges développent naturellement leur goût authentique et leur texture fondante. Leur chair orangée, riche en vitamines et en fibres, se prête à mille préparations : soupes veloutées, gratins crémeux, purées onctueuses ou simplement rôties au four.
+                        </p>
+
+                        <h3>Caractéristiques</h3>
+                        <ul class="product-features">
+                            <li>Certifiées Agriculture Biologique</li>
+                            <li>Plusieurs variétés disponibles selon la saison</li>
+                            <li>Cultivées en plein champ</li>
+                            <li>Excellente conservation naturelle</li>
+                            <li>Riches en vitamines A et C</li>
+                            <li>Culture sans traitement chimique</li>
+                        </ul>
+
+                        <div class="product-price">
+                            <span class="price-label">Prix:</span>
+                            <span class="price-value">2,80€ / kg</span>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="contact.html" class="btn btn-primary">Commander</a>
+                            <a href="produits.html" class="btn btn-secondary">Voir tous les produits</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+
+        burger.addEventListener('click', () => {
+            const expanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        nav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                burger.setAttribute('aria-expanded','false');
+                nav.classList.remove('open');
+            });
+        });
+
+        fetch("/html/footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+</body>
+</html>

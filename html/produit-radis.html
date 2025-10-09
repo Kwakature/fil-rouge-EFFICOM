@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salades de Saison - Les Jardins de Marie</title>
+    <link rel="stylesheet" href="/asset/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2>Les Jardins de Marie</h2>
+                <p class="tagline">Maraîcher Bio</p>
+            </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li><a href="/html/produits.html" class="active" >Nos Produits</a></li>
+                    <li><a href="/html/savoir-faire.html">Notre Savoir-Faire</a></li>
+                    <li><a href="/html/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Bouton burger -->
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-layout">
+                    <div class="product-gallery">
+                        <img src="/asset/img/radis-roses.webp" alt="Salades fraîches">
+                    </div>
+                    <div class="product-info">
+                        <h1>radis roses</h1>
+                        <p class="product-description">
+                            Nos radis roses sont récoltés chaque matin pour garantir une fraîcheur et un croquant incomparables. Rondes ou allongées, leurs racines aux teintes vives annoncent le retour des beaux jours. Leur saveur légèrement piquante réveille les papilles, qu’ils soient croqués nature, tranchés en salade ou simplement accompagnés d’un peu de beurre et de sel. Un petit légume plein de pep’s et de vitalité ! </p>
+                        <p class="product-description">
+                            Cultivés en pleine terre et sous tunnels selon la saison, nos radis roses poussent naturellement, sans aucun traitement. Leur texture croquante et leur goût frais reflètent une culture respectueuse et attentive. Récoltés à maturité idéale, ils conservent toute leur vivacité, leurs arômes délicats et leurs bienfaits naturels.</p>
+
+                        <h3>Caractéristiques</h3>
+                        <ul class="product-features">
+                            <li>Certifiées Agriculture Biologique</li>
+                            <li>Récoltées le matin même</li>
+                            <li>Variétés adaptées à chaque saison</li>
+                            <li>Culture sans pesticides</li>
+                            <li>Fraîcheur maximale garantie</li>
+                            <li>Produit local des Hauts-de-France</li>
+                        </ul>
+
+                        <div class="product-price">
+                            <span class="price-label">Prix:</span>
+                            <span class="price-value">1,50€ / pièce</span>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="/html/contact.html" class="btn btn-primary">Commander</a>
+                            <a href="/html/produits.html" class="btn btn-secondary">Voir tous les produits</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+
+        burger.addEventListener('click', () => {
+            const expanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        nav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                burger.setAttribute('aria-expanded','false');
+                nav.classList.remove('open');
+            });
+        });
+
+        fetch("/html/footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+</body>
+</html>

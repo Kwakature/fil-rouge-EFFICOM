@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Accès - Les Jardins de Marie</title>
+    <link rel="stylesheet" href="/asset/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2>Les Jardins de Marie</h2>
+                <p class="tagline">Maraîcher Bio</p>
+            </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li><a href="/html/produits.html">Nos Produits</a></li>
+                    <li><a href="/html/savoir-faire.html">Notre Savoir-Faire</a></li>
+                    <li><a href="/html/contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Bouton burger -->
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Nous Contacter</h1>
+                <p>Retrouvez-nous à la ferme ou contactez-nous pour toute question</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <h2>Coordonnées</h2>
+
+                        <div class="info-block">
+                            <h3>Adresse</h3>
+                            <p>
+                                Les Jardins de Marie<br>
+                                Faubourg des Postes<br>
+                                59000 Lille<br>
+                                Hauts-de-France
+                            </p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:0320123456">03 20 12 34 56</a></p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@jardinsdemarie.fr">contact@jardinsdemarie.fr</a></p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Horaires d'Ouverture</h3>
+                            <p>
+                                <strong>Vente à la ferme :</strong><br>
+                                Mercredi : 16h - 19h<br>
+                                Vendredi : 16h - 19h<br>
+                                Samedi : 9h - 13h
+                            </p>
+                            <p>
+                                <strong>Marchés :</strong><br>
+                                Marché de Wazemmes : Dimanche matin<br>
+                                Marché de Lambersart : Jeudi matin
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Envoyez-nous un Message</h2>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nom et Prénom *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Sujet *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Choisissez un sujet</option>
+                                    <option value="commande">Passer une commande</option>
+                                    <option value="info">Demande d'information</option>
+                                    <option value="visite">Visite de la ferme</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Envoyer le Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2>Comment nous Trouver</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2529.847396712853!2d3.057256!3d50.629250!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d5f5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sJ26X%2BHC%20Lille%2C%20France!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Carte de localisation des Jardins de Marie">
+                    </iframe>
+                </div>
+                <div class="map-info">
+                    <p>
+                        <strong>Accès en voiture :</strong> Parking gratuit disponible sur place<br>
+                        <strong>Accès en transport :</strong> Bus Lignes: L2, B1, 25R, CITL, CO1, CO2, L92"
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+        <script>
+  // On attend que la page soit complètement chargée
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector(".contact-form");
+
+            form.addEventListener("submit", function(e) {
+                e.preventDefault(); // Empêche le rechargement
+                alert("✅ Votre message a été envoyé avec succès !");
+                form.reset(); // Vide les champs
+            });
+        });
+        </script>
+
+    <script>
+
+        
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+
+        burger.addEventListener('click', () => {
+            const expanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        nav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                burger.setAttribute('aria-expanded','false');
+                nav.classList.remove('open');
+            });
+        });
+
+        fetch("/html/footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+</body>
+</html>
