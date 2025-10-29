@@ -7,31 +7,7 @@
     <link rel="stylesheet" href="/asset/css/styles.css">
 </head>
 <body>
-<header>
-    <div class="container">
-        <div class="logo">
-            <h2>Les Jardins de Marie</h2>
-            <p class="tagline">Maraîcher Bio</p>
-        </div>
-
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="/html/produits.html">Nos Produits</a></li>
-                <li><a href="/html/savoir-faire.html">Notre Savoir-Faire</a></li>
-                <li><a href="/html/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!-- Bouton burger -->
-        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</header>
-
+    <div id="header"></div>
 
     <main>
         <section class="hero">
@@ -103,28 +79,6 @@
  
     <div id="footer"></div>
 
-    <script>
-
-        const burger = document.getElementById('burger');
-        const nav = document.getElementById('nav');
-
-        burger.addEventListener('click', () => {
-            const expanded = burger.getAttribute('aria-expanded') === 'true';
-            burger.setAttribute('aria-expanded', String(!expanded));
-            nav.classList.toggle('open');
-        });
-
-        // Fermer le menu quand on clique sur un lien
-        nav.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                burger.setAttribute('aria-expanded','false');
-                nav.classList.remove('open');
-            });
-        });
-
-        fetch("/html/footer.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("footer").innerHTML = data);
-    </script>
+    <script src="/asset/js/layout.js"></script>
 </body>
 </html>
