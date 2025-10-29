@@ -5,6 +5,38 @@ const normalizePath = (path) => {
     return path.endsWith("/") ? `${path}index.html` : path;
 };
 
+const loadHead = () => {
+    if (document.head.dataset.headPartialLoaded === "true") {
+        return;
+    }
+
+    fetch("/html/head.html")
+        .then(response => response.text())
+        .then(data => {
+            const template = document.createElement("template");
+            template.innerHTML = data.trim();
+
+            template.content.querySelectorAll("meta, link").forEach(node => {
+                if (node.tagName === "META") {
+                    const nameAttr = node.getAttribute("name");
+                    if (nameAttr && document.head.querySelector(`meta[name="${nameAttr}"]`)) {
+                        node.remove();
+                    }
+                } else if (node.tagName === "LINK") {
+                    const relAttr = node.getAttribute("rel");
+                    const hrefAttr = node.getAttribute("href");
+                    if (relAttr && hrefAttr && document.head.querySelector(`link[rel="${relAttr}"][href="${hrefAttr}"]`)) {
+                        node.remove();
+                    }
+                }
+            });
+
+            document.head.appendChild(template.content);
+            document.head.dataset.headPartialLoaded = "true";
+        })
+        .catch(error => console.error("Erreur lors du chargement du head :", error));
+};
+
 const highlightActiveLink = () => {
     const nav = document.querySelector("#nav");
     if (!nav) {
@@ -95,6 +127,8 @@ const loadFooter = () => {
         })
         .catch(error => console.error("Erreur lors du chargement du footer :", error));
 };
+
+loadHead();
 
 document.addEventListener("DOMContentLoaded", () => {
     loadHeader();
