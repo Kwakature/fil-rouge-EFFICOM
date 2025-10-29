@@ -125,6 +125,7 @@ nav ul {
   display: flex;
   list-style: none;
   gap: var(--spacing-md);
+  align-items: center;
 }
 
 nav a {
@@ -139,6 +140,12 @@ nav a:hover,
 nav a.active {
   background-color: var(--primary-color);
   color: var(--white);
+}
+
+.img_panier {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .hero {
