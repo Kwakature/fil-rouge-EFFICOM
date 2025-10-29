@@ -148,6 +148,12 @@ nav a.active {
   object-fit: contain;
 }
 
+.img_panier:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
 .hero {
   background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)),
     url("/asset/img/present.webp") center/cover;
