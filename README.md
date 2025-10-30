@@ -19,39 +19,91 @@ Site vitrine pour le maraicher bio "Les Jardins de Marie", situe pres de Lille. 
 ## Arborescence
 ```text
 fil-rouge-EFFICOM/
-|-- index.html
-|-- README.md
-|-- .gitignore
-|-- asset/
-|   |-- css/
-|   |   `-- styles.css
-|   |-- js/
-|   |   |-- layout.js
-|   |   |-- cart.js
-|   |   `-- cart-page.js
-|   `-- img/
-|       `-- (... fichiers .jpg / .webp / .png / .ico)
-|-- html/
-|   |-- header.html
-|   |-- footer.html
-|   |-- contact.html
-|   |-- produits.html
-|   |-- panier.html
-|   |-- savoir-faire.html
-|   |-- epinards-frais.html
-|   |-- Persil-plat.html
-|   |-- Basilic-frais.html
-|   |-- Choux-verts.html
-|   |-- produit-carottes-bio.html
-|   |-- produit-salades.html
-|   |-- produit-betteraves.html
-|   |-- produit-courgettes.html
-|   |-- produit-courges.html
-|   |-- produit-radis.html
-|   |-- produit-tomates-anciennes.html
-|   `-- Ciboulette-fraîche.html
-`-- .git/
-    `-- (... configuration Git)
+├── asset
+│   ├── css
+│   │   └── styles.css
+│   ├── img
+│   │   ├── Basilic-Frais-480.jpg
+│   │   ├── Basilic-Frais-960.jpg
+│   │   ├── Basilic-Frais.webp
+│   │   ├── betteraves-rouge-480.jpg
+│   │   ├── betteraves-rouge-960.jpg
+│   │   ├── betteraves-rouge.webp
+│   │   ├── bio-3-480.jpg
+│   │   ├── bio-3-960.jpg
+│   │   ├── bio-3.webp
+│   │   ├── bio-4-480.jpg
+│   │   ├── bio-4-960.jpg
+│   │   ├── bio-4.webp
+│   │   ├── carottes-multicolores-480.jpg
+│   │   ├── carottes-multicolores-960.jpg
+│   │   ├── carottes-multicolores.webp
+│   │   ├── choux-verts-480.jpg
+│   │   ├── choux-verts-960.jpg
+│   │   ├── choux-verts.webp
+│   │   ├── ciboulette-fraiche-480.jpg
+│   │   ├── ciboulette-fraiche-960.jpg
+│   │   ├── ciboulette-fraiche.webp
+│   │   ├── courges-du-jardin-480.jpg
+│   │   ├── courges-du-jardin-960.jpg
+│   │   ├── courges-du-jardin.webp
+│   │   ├── courgettes-vertes-480.jpg
+│   │   ├── courgettes-vertes-960.jpg
+│   │   ├── courgettes-vertes.webp
+│   │   ├── epinard-frais-480.jpg
+│   │   ├── epinard-frais-960.jpg
+│   │   ├── epinard-frais.webp
+│   │   ├── logo-jardin-de-marie-192.png
+│   │   ├── logo-jardin-de-marie-96.png
+│   │   ├── logo-jardin-de-marie.ico
+│   │   ├── logo-jardin-de-marie.png
+│   │   ├── Persil-plat-480.jpg
+│   │   ├── Persil-plat-960.jpg
+│   │   ├── Persil-plat.webp
+│   │   ├── pexels-photo-1656663.webp
+│   │   ├── present.webp
+│   │   ├── radis-roses-480.jpg
+│   │   ├── radis-roses-960.jpg
+│   │   ├── radis-roses.webp
+│   │   ├── sac-de-courses-48.png
+│   │   ├── sac-de-courses-96.png
+│   │   ├── sac-de-courses.png
+│   │   ├── salades-de-saison-480.jpg
+│   │   ├── salades-de-saison-960.jpg
+│   │   ├── salades-de-saison.webp
+│   │   ├── tomate-ancienne-480.jpg
+│   │   ├── tomate-ancienne-960.jpg
+│   │   ├── tomate-ancienne.webp
+│   │   ├── tracteur-480.jpg
+│   │   ├── tracteur-960.jpg
+│   │   └── tracteur.webp
+│   └── js
+│       ├── cart-page.js
+│       ├── cart.js
+│       └── layout.js
+├── html
+│   ├── Basilic-frais.html
+│   ├── Choux-verts.html
+│   ├── Ciboulette-fraîche.html
+│   ├── contact.html
+│   ├── epinards-frais.html
+│   ├── footer.html
+│   ├── header.html
+│   ├── mentions-legales.html
+│   ├── panier.html
+│   ├── Persil-plat.html
+│   ├── produit-betteraves.html
+│   ├── produit-carottes-bio.html
+│   ├── produit-courges.html
+│   ├── produit-courgettes.html
+│   ├── produit-radis.html
+│   ├── produit-salades.html
+│   ├── produit-tomates-anciennes.html
+│   ├── produits.html
+│   └── savoir-faire.html
+├── .gitignore
+├── index.html
+└── README.md
 ```
 
 ## Technologies utilisees
