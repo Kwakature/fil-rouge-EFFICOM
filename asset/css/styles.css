@@ -1,13 +1,14 @@
 :root {
   --primary-color: #2d5016;
   --secondary-color: #6b8e23;
-  --accent-color: #ff6b35;
+  --accent-color: #c24f1d;
   --text-dark: #2c3e50;
   --text-light: #7f8c8d;
   --background-light: #f8f9fa;
   --white: #ffffff;
   --success: #27ae60;
   --border-color: #e0e0e0;
+  --price-color: #b34700;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
@@ -116,7 +117,7 @@ header .container {
 }
 
 .tagline {
-  color: var(--text-light);
+  color: var(--text-dark);
   font-size: 0.875rem;
   margin-bottom: 0;
 }
@@ -136,20 +137,35 @@ nav a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
+nav a:not(.link_panier):hover,
+nav a:not(.link_panier).active {
   background-color: var(--primary-color);
   color: var(--white);
+}
+
+.link_panier {
+  padding: var(--spacing-xs);
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.link_panier:hover {
+  background: var(--white);
+  color: inherit;
+}
+
+.link_panier:hover .img_panier {
+  transform: scale(1.1);
 }
 
 .img_panier {
   width: 24px;
   height: 24px;
   object-fit: contain;
-}
-
-.img_panier:hover {
-  transform: scale(1.1);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -229,8 +245,8 @@ nav a.active {
 }
 
 .product-image {
-  height: 250px;
   overflow: hidden;
+  aspect-ratio: 4 / 3;
 }
 
 .product-image img {
@@ -252,10 +268,22 @@ nav a.active {
 
 .product-card .price {
   padding: var(--spacing-xs) var(--spacing-md) var(--spacing-md);
-  color: var(--accent-color);
+  color: var(--price-color);
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .rencontrez-producteur {
@@ -428,7 +456,7 @@ nav a.active {
 .price-value {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--price-color);
 }
 
 .product-actions {

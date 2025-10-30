@@ -63,35 +63,79 @@ const initializeNavigation = () => {
   });
 };
 
-const loadHeader = () => {
-  const headerContainer = document.querySelector("#header");
-  if (!headerContainer) {
+const isSessionStorageAvailable = (() => {
+  try {
+    const testKey = "__layout_cache__";
+    sessionStorage.setItem(testKey, "1");
+    sessionStorage.removeItem(testKey);
+    return true;
+  } catch (error) {
+    return false;
+  }
+})();
+
+const getCachedFragment = (cacheKey) => {
+  if (!isSessionStorageAvailable) {
+    return null;
+  }
+  return sessionStorage.getItem(cacheKey);
+};
+
+const setCachedFragment = (cacheKey, content) => {
+  if (!isSessionStorageAvailable) {
+    return;
+  }
+  try {
+    sessionStorage.setItem(cacheKey, content);
+  } catch (error) {
+    // Ignore quota errors silently to avoid breaking the render path.
+  }
+};
+
+const fetchFragment = async (url, cacheKey) => {
+  const cached = getCachedFragment(cacheKey);
+  if (cached) {
+    return cached;
+  }
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Échec du chargement de ${url} (${response.status})`);
+  }
+
+  const content = await response.text();
+  setCachedFragment(cacheKey, content);
+  return content;
+};
+
+const mountFragment = (selector, html, onMount) => {
+  const container = document.querySelector(selector);
+  if (!container) {
     return;
   }
 
-  fetch("/html/header.html")
-    .then((response) => response.text())
-    .then((data) => {
-      headerContainer.innerHTML = data;
-      initializeNavigation();
-      highlightActiveLink();
-    })
+  container.innerHTML = html;
+  if (typeof onMount === "function") {
+    onMount(container);
+  }
+};
+
+const loadHeader = () => {
+  fetchFragment("/html/header.html", "layout:header")
+    .then((html) =>
+      mountFragment("#header", html, () => {
+        initializeNavigation();
+        highlightActiveLink();
+      })
+    )
     .catch((error) =>
       console.error("Erreur lors du chargement du header :", error)
     );
 };
 
 const loadFooter = () => {
-  const footerContainer = document.querySelector("#footer");
-  if (!footerContainer) {
-    return;
-  }
-
-  fetch("/html/footer.html")
-    .then((response) => response.text())
-    .then((data) => {
-      footerContainer.innerHTML = data;
-    })
+  fetchFragment("/html/footer.html", "layout:footer")
+    .then((html) => mountFragment("#footer", html))
     .catch((error) =>
       console.error("Erreur lors du chargement du footer :", error)
     );
