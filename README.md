@@ -16,6 +16,44 @@ Site vitrine pour le maraicher bio "Les Jardins de Marie", situe pres de Lille. 
 - `asset/js/` : scripts pour le layout (`layout.js`) et la gestion du panier (`cart.js`).
 - `asset/img/` : images optimisees (formats 480px/960px).
 
+## Arborescence
+```text
+fil-rouge-EFFICOM/
+|-- index.html
+|-- README.md
+|-- .gitignore
+|-- asset/
+|   |-- css/
+|   |   `-- styles.css
+|   |-- js/
+|   |   |-- layout.js
+|   |   |-- cart.js
+|   |   `-- cart-page.js
+|   `-- img/
+|       `-- (... fichiers .jpg / .webp / .png / .ico)
+|-- html/
+|   |-- header.html
+|   |-- footer.html
+|   |-- contact.html
+|   |-- produits.html
+|   |-- panier.html
+|   |-- savoir-faire.html
+|   |-- epinards-frais.html
+|   |-- Persil-plat.html
+|   |-- Basilic-frais.html
+|   |-- Choux-verts.html
+|   |-- produit-carottes-bio.html
+|   |-- produit-salades.html
+|   |-- produit-betteraves.html
+|   |-- produit-courgettes.html
+|   |-- produit-courges.html
+|   |-- produit-radis.html
+|   |-- produit-tomates-anciennes.html
+|   `-- Ciboulette-fraîche.html
+`-- .git/
+    `-- (... configuration Git)
+```
+
 ## Technologies utilisees
 - HTML5 semantique pour le contenu.
 - CSS3 responsive avec grilles flexibles et variables.

@@ -27,6 +27,7 @@ const highlightActiveLink = () => {
       productSection,
       "/html/savoir-faire.html",
       "/html/contact.html",
+      "/html/mentions-legales.html",
     ]);
 
     if (targetPath.startsWith("/html/") && !nonProductPages.has(targetPath)) {
