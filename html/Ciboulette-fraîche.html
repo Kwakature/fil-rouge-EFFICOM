@@ -27,7 +27,13 @@
                             alt="Ciboulette fraîche du jardin"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="ciboulette-fraiche"
+                        data-product-name="Ciboulette Fraîche"
+                        data-product-price="1,00€"
+                        data-product-price-label="1,00€ / bouquet"
+                    >
                         <h1>Ciboulette Fraîche</h1>
                         <p class="product-description">
                             Notre ciboulette fraîche apporte une touche de finesse et de fraîcheur à vos plats. Son goût délicatement aillé relève parfaitement salades, omelettes, sauces, fromages frais ou pommes de terre.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="contact.html" class="btn btn-secondary">Commander</a>
                             <a href="produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

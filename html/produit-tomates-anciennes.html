@@ -27,7 +27,13 @@
                             alt="Tomates anciennes variées"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="tomates-anciennes"
+                        data-product-name="Tomates Anciennes"
+                        data-product-price="4,50€"
+                        data-product-price-label="4,50€ / kg"
+                    >
                         <h1>Tomates Anciennes</h1>
                         <p class="product-description">
                             Nos tomates anciennes sont le fruit d'une sélection rigoureuse de variétés oubliées, cultivées avec passion dans nos serres. Chaque variété possède sa propre histoire et ses caractéristiques gustatives uniques. De la Noire de Crimée à la Cœur de Bœuf, en passant par l'Ananas et la Green Zebra, découvrez des saveurs authentiques et intenses.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="/html/contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="/html/contact.html" class="btn btn-secondary">Commander</a>
                             <a href="/html/produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

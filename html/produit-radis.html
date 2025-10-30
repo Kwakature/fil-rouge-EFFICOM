@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Radis roses bio des Jardins de Marie, croquants et cultivés localement en circuit court.">
-    <title>Salades de Saison - Les Jardins de Marie</title>
+    <title>Radis Roses - Les Jardins de Marie</title>
     <link rel="stylesheet" href="/asset/css/styles.css">
     <link rel="icon" type="image/png" href="/asset/img/logo-jardin-de-marie.ico">
 </head>
@@ -27,8 +27,14 @@
                             alt="Salades fraîches"
                         >
                     </div>
-                    <div class="product-info">
-                        <h1>radis roses</h1>
+                    <div
+                        class="product-info"
+                        data-product-id="radis-roses"
+                        data-product-name="Radis Roses"
+                        data-product-price="2,50€"
+                        data-product-price-label="2,50€ / botte"
+                    >
+                        <h1>Radis Roses</h1>
                         <p class="product-description">
                             Nos radis roses sont récoltés chaque matin pour garantir une fraîcheur et un croquant incomparables. Rondes ou allongées, leurs racines aux teintes vives annoncent le retour des beaux jours. Leur saveur légèrement piquante réveille les papilles, qu’ils soient croqués nature, tranchés en salade ou simplement accompagnés d’un peu de beurre et de sel. Un petit légume plein de pep’s et de vitalité ! </p>
                         <p class="product-description">
@@ -46,11 +52,12 @@
 
                         <div class="product-price">
                             <span class="price-label">Prix:</span>
-                            <span class="price-value">1,50€ / pièce</span>
+                            <span class="price-value">2,50€ / botte</span>
                         </div>
 
                         <div class="product-actions">
-                            <a href="/html/contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="/html/contact.html" class="btn btn-secondary">Commander</a>
                             <a href="/html/produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -62,5 +69,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

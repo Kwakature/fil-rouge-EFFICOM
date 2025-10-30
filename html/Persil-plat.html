@@ -27,7 +27,13 @@
                             alt="Persil plat du jardin"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="persil-plat"
+                        data-product-name="Persil Plat"
+                        data-product-price="1,20€"
+                        data-product-price-label="1,20€ / bouquet"
+                    >
                         <h1>Persil Plat</h1>
                         <p class="product-description">
                             Notre persil plat est reconnu pour son arôme intense et sa fraîcheur exceptionnelle. Incontournable dans la cuisine, il relève toutes vos recettes — salades, sauces, poissons, viandes et plats mijotés.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="contact.html" class="btn btn-secondary">Commander</a>
                             <a href="produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

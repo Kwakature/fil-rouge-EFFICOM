@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Betteraves rouges bio des Jardins de Marie, sucrées et idéales pour salades ou jus maison.">
-    <title>Salades de Saison - Les Jardins de Marie</title>
+    <title>Betteraves Rouges - Les Jardins de Marie</title>
     <link rel="stylesheet" href="/asset/css/styles.css">
     <link rel="icon" type="image/png" href="/asset/img/logo-jardin-de-marie.ico">
 </head>
@@ -27,7 +27,13 @@
                             alt="Salades fraîches"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="betteraves-rouges"
+                        data-product-name="Betteraves Rouges"
+                        data-product-price="2,90€"
+                        data-product-price-label="2,90€ / kg"
+                    >
                         <h1>Betteraves Rouges</h1>
                         <p class="product-description">
                             Nos betteraves rouges sont récoltées à pleine maturité pour préserver toute leur douceur et leur richesse en saveurs. Rondes ou allongées, elles se déclinent en plusieurs variétés selon la saison. Fondantes et naturellement sucrées, elles se dégustent aussi bien crues que cuites, en salade, en carpaccio ou rôties au four. Un légume racine haut en couleur, symbole de vitalité et de gourmandise.                        </p>
@@ -46,11 +52,12 @@
 
                         <div class="product-price">
                             <span class="price-label">Prix:</span>
-                            <span class="price-value">3,50€ / pièce</span>
+                            <span class="price-value">2,90€ / kg</span>
                         </div>
 
                         <div class="product-actions">
-                            <a href="/html/contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="/html/contact.html" class="btn btn-secondary">Commander</a>
                             <a href="/html/produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -62,5 +69,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

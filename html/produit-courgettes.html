@@ -27,7 +27,13 @@
                             alt="Salades fraîches"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="courgettes-vertes"
+                        data-product-name="Courgettes"
+                        data-product-price="3,50€"
+                        data-product-price-label="3,50€ / pièce"
+                    >
                         <h1>Courgettes</h1>
                         <p class="product-description">
                             Nos courgettes sont cueillies à maturité chaque matin pour préserver toute leur fraîcheur et leur saveur. Vertes, jaunes ou striées, elles se déclinent en plusieurs variétés au rythme des saisons. Tendres et délicatement sucrées, elles se prêtent à toutes vos envies, qu’elles soient grillées, farcies ou simplement poêlées. Un légume d’été par excellence, plein de soleil et de légèreté.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="/html/contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="/html/contact.html" class="btn btn-secondary">Commander</a>
                             <a href="/html/produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

@@ -27,7 +27,13 @@
                             alt="Épinards frais "
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="epinards-frais"
+                        data-product-name="Épinards Frais"
+                        data-product-price="3,80€"
+                        data-product-price-label="3,80€ / kg"
+                    >
                         <h1>Épinards Frais</h1>
                         <p class="product-description">
                             Nos épinards frais sont cueillis à la main chaque matin pour garantir une fraîcheur et une saveur incomparables. Tendres et riches en goût, ils sont parfaits aussi bien crus en salade que cuits dans vos plats préférés.
@@ -51,7 +57,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="contact.html" class="btn btn-secondary">Commander</a>
                             <a href="produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -63,5 +70,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

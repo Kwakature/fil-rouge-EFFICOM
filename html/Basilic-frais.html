@@ -27,7 +27,13 @@
                             alt="Basilic frais du jardin"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="basilic-frais"
+                        data-product-name="Basilic Frais"
+                        data-product-price="1,50€"
+                        data-product-price-label="1,50€ / bouquet"
+                    >
                         <h1>Basilic Frais</h1>
                         <p class="product-description">
                             Notre basilic frais est cultivé avec soin pour offrir un parfum intense et des feuilles tendres, idéales pour rehausser vos plats d’été. Parfait pour les salades, les pestos ou en accompagnement de tomates et mozzarella.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="/html/contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="/html/contact.html" class="btn btn-secondary">Commander</a>
                             <a href="/html/produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

@@ -27,7 +27,13 @@
                             alt="Assortiment de courges"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="courges-du-jardin"
+                        data-product-name="Courges du Jardin"
+                        data-product-price="2,80€"
+                        data-product-price-label="2,80€ / kg"
+                    >
                         <h1>Courges du Jardin</h1>
                         <p class="product-description">
                             L'automne arrive avec son cortège de courges savoureuses. Butternut, potimarron, courge musquée ou spaghetti, nous cultivons une large gamme de cucurbitacées aux formes et saveurs variées. Ces légumes généreux, gorgés de soleil, se conservent plusieurs mois et constituent la base idéale de nombreuses recettes réconfortantes.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="contact.html" class="btn btn-secondary">Commander</a>
                             <a href="produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

@@ -12,7 +12,9 @@ const highlightActiveLink = () => {
   }
 
   const currentPath = normalizePath(window.location.pathname);
-  const navLinks = Array.from(nav.querySelectorAll("a"));
+  const navLinks = Array.from(nav.querySelectorAll("a")).filter(
+    (link) => !link.classList.contains("cart-trigger")
+  );
   const linkByPath = new Map(
     navLinks.map((link) => [normalizePath(link.getAttribute("href")), link])
   );
@@ -123,9 +125,14 @@ const mountFragment = (selector, html, onMount) => {
 const loadHeader = () => {
   fetchFragment("/html/header.html", "layout:header")
     .then((html) =>
-      mountFragment("#header", html, () => {
+      mountFragment("#header", html, (container) => {
         initializeNavigation();
         highlightActiveLink();
+        document.dispatchEvent(
+          new CustomEvent("header:loaded", {
+            detail: container,
+          })
+        );
       })
     )
     .catch((error) =>

@@ -27,7 +27,13 @@
                             alt="Choux verts du jardin"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="choux-verts"
+                        data-product-name="Choux Verts"
+                        data-product-price="2,50€"
+                        data-product-price-label="2,50€ / pièce"
+                    >
                         <h1>Choux Verts</h1>
                         <p class="product-description">
                             Nos choux verts, cultivés avec soin dans nos champs, sont croquants, savoureux et pleins de bienfaits. Riches en fibres, en vitamines et en minéraux, ils sont parfaits pour des plats mijotés, des soupes ou tout simplement braisés.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="contact.html" class="btn btn-secondary">Commander</a>
                             <a href="produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

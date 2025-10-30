@@ -27,7 +27,13 @@
                             alt="Carottes multicolores bio"
                         >
                     </div>
-                    <div class="product-info">
+                    <div
+                        class="product-info"
+                        data-product-id="carottes-multicolores"
+                        data-product-name="Carottes Multicolores Bio"
+                        data-product-price="3,20€"
+                        data-product-price-label="3,20€ / kg"
+                    >
                         <h1>Carottes Multicolores Bio</h1>
                         <p class="product-description">
                             Redécouvrez la carotte dans toute sa diversité avec notre gamme de carottes multicolores. Oranges bien sûr, mais aussi violettes, jaunes et blanches, ces variétés anciennes offrent une palette de saveurs et de textures remarquables. Cultivées en pleine terre dans nos champs, elles bénéficient d'une croissance lente qui leur confère une densité et un goût incomparables.
@@ -52,7 +58,8 @@
                         </div>
 
                         <div class="product-actions">
-                            <a href="/html/contact.html" class="btn btn-primary">Commander</a>
+                            <button type="button" class="btn btn-primary" data-add-to-cart>Ajouter au panier</button>
+                            <a href="/html/contact.html" class="btn btn-secondary">Commander</a>
                             <a href="/html/produits.html" class="btn btn-secondary">Voir tous les produits</a>
                         </div>
                     </div>
@@ -64,5 +71,6 @@
     <div id="footer"></div>
 
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
 </body>
 </html>

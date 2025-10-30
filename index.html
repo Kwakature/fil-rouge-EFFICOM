@@ -8,6 +8,7 @@
     <title>Les Jardins de Marie - Maraîcher Bio | Le Panier Lillois</title>
     <link rel="stylesheet" href="/asset/css/styles.css">
     <script defer src="/asset/js/layout.js"></script>
+    <script defer src="/asset/js/cart.js"></script>
     <link rel="icon" type="image/png" href="/asset/img/logo-jardin-de-marie.ico">
 </head>
 
@@ -35,70 +36,102 @@
             <div class="container">
                 <h2>Nos Produits Vedettes</h2>
                 <div class="product-grid">
-                    <a href="/html/produit-tomates-anciennes.html" class="product-card">
-                        <div class="product-image">
-                            <img
-                                loading="lazy"
-                                decoding="async"
-                                src="/asset/img/tomate-ancienne-480.jpg"
-                                srcset="/asset/img/tomate-ancienne-480.jpg 480w, /asset/img/tomate-ancienne-960.jpg 960w"
-                                sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
-                                width="440"
-                                height="480"
-                                alt="Tomates anciennes"
-                            >
-                        </div>
-                        <h3>Tomates Anciennes</h3>
-                        <p class="price">4,50€ / kg</p>
-                    </a>
-                    <a href="/html/produit-carottes-bio.html" class="product-card">
-                        <div class="product-image">
-                            <img
-                                loading="lazy"
-                                decoding="async"
-                                src="/asset/img/carottes-multicolores-480.jpg"
-                                srcset="/asset/img/carottes-multicolores-480.jpg 480w, /asset/img/carottes-multicolores-960.jpg 960w"
-                                sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
-                                width="480"
-                                height="320"
-                                alt="Carottes bio"
-                            >
-                        </div>
-                        <h3>Carottes Multicolores</h3>
-                        <p class="price">3,20€ / kg</p>
-                    </a>
-                    <a href="/html/produit-courges.html" class="product-card">
-                        <div class="product-image">
-                            <img
-                                loading="lazy"
-                                decoding="async"
-                                src="/asset/img/courges-du-jardin-480.jpg"
-                                srcset="/asset/img/courges-du-jardin-480.jpg 480w, /asset/img/courges-du-jardin-960.jpg 960w"
-                                sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
-                                width="360"
-                                height="480"
-                                alt="Courges"
-                            >
-                        </div>
-                        <h3>Courges du Jardin</h3>
-                        <p class="price">2,80€ / kg</p>
-                    </a>
-                    <a href="/html/produit-salades.html" class="product-card">
-                        <div class="product-image">
-                            <img
-                                loading="lazy"
-                                decoding="async"
-                                src="/asset/img/salades-de-saison-480.jpg"
-                                srcset="/asset/img/salades-de-saison-480.jpg 480w, /asset/img/salades-de-saison-960.jpg 960w"
-                                sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
-                                width="480"
-                                height="307"
-                                alt="Salades"
-                            >
-                        </div>
-                        <h3>Salades de Saison</h3>
-                        <p class="price">2,00€ / pièce</p>
-                    </a>
+                    <article
+                        class="product-card"
+                        data-product-id="tomates-anciennes"
+                        data-product-name="Tomates Anciennes"
+                        data-product-price="4,50€"
+                        data-product-price-label="4,50€ / kg"
+                    >
+                        <a href="/html/produit-tomates-anciennes.html" class="product-card__link">
+                            <div class="product-image">
+                                <img
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="/asset/img/tomate-ancienne-480.jpg"
+                                    srcset="/asset/img/tomate-ancienne-480.jpg 480w, /asset/img/tomate-ancienne-960.jpg 960w"
+                                    sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
+                                    width="440"
+                                    height="480"
+                                    alt="Tomates anciennes"
+                                >
+                            </div>
+                            <h3>Tomates Anciennes</h3>
+                            <p class="price">4,50€ / kg</p>
+                        </a>
+                    </article>
+                    <article
+                        class="product-card"
+                        data-product-id="carottes-multicolores"
+                        data-product-name="Carottes Multicolores"
+                        data-product-price="3,20€"
+                        data-product-price-label="3,20€ / kg"
+                    >
+                        <a href="/html/produit-carottes-bio.html" class="product-card__link">
+                            <div class="product-image">
+                                <img
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="/asset/img/carottes-multicolores-480.jpg"
+                                    srcset="/asset/img/carottes-multicolores-480.jpg 480w, /asset/img/carottes-multicolores-960.jpg 960w"
+                                    sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
+                                    width="480"
+                                    height="320"
+                                    alt="Carottes bio"
+                                >
+                            </div>
+                            <h3>Carottes Multicolores</h3>
+                            <p class="price">3,20€ / kg</p>
+                        </a>
+                    </article>
+                    <article
+                        class="product-card"
+                        data-product-id="courges-du-jardin"
+                        data-product-name="Courges du Jardin"
+                        data-product-price="2,80€"
+                        data-product-price-label="2,80€ / kg"
+                    >
+                        <a href="/html/produit-courges.html" class="product-card__link">
+                            <div class="product-image">
+                                <img
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="/asset/img/courges-du-jardin-480.jpg"
+                                    srcset="/asset/img/courges-du-jardin-480.jpg 480w, /asset/img/courges-du-jardin-960.jpg 960w"
+                                    sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
+                                    width="360"
+                                    height="480"
+                                    alt="Courges"
+                                >
+                            </div>
+                            <h3>Courges du Jardin</h3>
+                            <p class="price">2,80€ / kg</p>
+                        </a>
+                    </article>
+                    <article
+                        class="product-card"
+                        data-product-id="salades-de-saison"
+                        data-product-name="Salades de Saison"
+                        data-product-price="2,00€"
+                        data-product-price-label="2,00€ / pièce"
+                    >
+                        <a href="/html/produit-salades.html" class="product-card__link">
+                            <div class="product-image">
+                                <img
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="/asset/img/salades-de-saison-480.jpg"
+                                    srcset="/asset/img/salades-de-saison-480.jpg 480w, /asset/img/salades-de-saison-960.jpg 960w"
+                                    sizes="(min-width: 1200px) 280px, (min-width: 768px) 45vw, 90vw"
+                                    width="480"
+                                    height="307"
+                                    alt="Salades"
+                                >
+                            </div>
+                            <h3>Salades de Saison</h3>
+                            <p class="price">2,00€ / pièce</p>
+                        </a>
+                    </article>
                 </div>
             </div>
         </section>
